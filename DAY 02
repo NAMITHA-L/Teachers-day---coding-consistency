@@ -1,0 +1,116 @@
+DAY 02:
+1. FizzBuzz 
+Code:
+
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        ArrayList<String> answer = new ArrayList<>();
+        int i = 1;
+        while (i <= n) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                answer.add("FizzBuzz");
+            } else if (i % 3 == 0) {
+                answer.add("Fizz");
+            } else if (i % 5 == 0) {
+                answer.add("Buzz");
+            } else {
+                answer.add(Integer.toString(i));
+            }
+            i++;
+        }
+        return answer;
+    }
+}
+Explanation:
+This classic problem prints numbers from 1 to n:
+If divisible by 3 → print "Fizz"
+If divisible by 5 → print "Buzz"
+If divisible by both → print "FizzBuzz"
+Otherwise, print the number itself
+Uses a loop from 1 to n and adds each result to a list.
+
+2.Check if Two Binary Trees are Same
+
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+        if (p == null || q == null || p.val != q.val) {
+            return false;
+        }
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+}
+
+Explanation:
+Compares two binary trees:
+If both nodes are null → they are equal
+If one is null or values don't match → not equal
+Otherwise, recursively check left and right subtrees
+Simple recursion to verify structural and value equality.
+
+3. Group Anagrams (Without HashMap)
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> result = new ArrayList<>();
+        List<String> seen = new ArrayList<>();
+
+        for (int i = 0; i < strs.length; i++) {
+            char[] arr = strs[i].toCharArray();
+            Arrays.sort(arr);
+            String sortedWord = new String(arr);
+
+            boolean found = false;
+            for (int j = 0; j < seen.size(); j++) {
+                if (seen.get(j).equals(sortedWord)) {
+                    result.get(j).add(strs[i]);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                seen.add(sortedWord);
+                List<String> group = new ArrayList<>();
+                group.add(strs[i]);
+                result.add(group);
+            }
+        }
+
+        return result;
+    }
+}
+
+Explanation:
+Groups strings that are anagrams (same characters in different order).
+Sorts each string to identify similar character combinations.
+Maintains a list of sorted patterns (seen) and builds groups accordingly.
+Doesn't use HashMap to keep it simple and beginner-friendly.
+
+4. Remove Elements from Linked List
+
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode cur = dummy;
+
+        while (cur.next != null) {
+            if (cur.next.val == val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
+            }
+        }
+        return dummy.next;
+    }
+}
+
+Explanation:
+Removes all nodes from a linked list that have the value val.
+Uses a dummy node to handle deletion from the head easily.
+Iterates through the list:
+If cur.next.val matches the value → skips the node.
+Else → moves to next node.
+Returns dummy.next, which is the new head of the modified list.
