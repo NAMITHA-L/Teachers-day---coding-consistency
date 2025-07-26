@@ -85,7 +85,7 @@ If not, a new group is started and added to the result.
 This avoids using HashMaps and keeps the logic simple for beginners.
 
 4. Remove Elements from Linked List
-   <img width="1919" height="870" alt="Screenshot 2025-07-26 222029" src="https://github.com/user-attachments/assets/94a0a3d1-ed24-4bfa-b3ec-bcd7e5b99eb3" />
+<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/891575d9-8739-4764-8b1c-9247bcc45e78" />
 
 This removes all nodes with a specific value from a linked list:
 
