@@ -98,3 +98,58 @@ If the next node's value matches the given value, it's skipped (cur.next = cur.n
 If not, it moves forward.
 
 Finally, it returns dummy.next which points to the possibly new head of the list.
+
+###DAY 03
+1. Valid Palindrome
+Problem:
+Check if a given string is a palindrome, considering only alphanumeric characters and ignoring cases.
+
+Approach:
+
+Use two pointers (start from beginning and last from end).
+
+Skip non-alphanumeric characters.
+
+Compare lowercase versions of characters.
+
+If at any point they differ, return false.
+
+If loop completes, return true.
+
+Why it works:
+Efficient two-pointer technique that avoids extra space and handles edge cases like symbols and spaces.
+
+2. Invert Binary Tree
+Problem:
+Invert (mirror) a binary tree by swapping left and right child nodes recursively.
+
+Approach:
+
+Base case: if the root is null, return null.
+
+Swap left and right children of the current node.
+
+Recursively call the same function on left and right children.
+
+Return the modified root.
+
+Why it works:
+Simple and elegant recursive approach that traverses the tree top-down and inverts each subtree.
+
+3. Top K Frequent Elements
+Problem:
+Given an integer array, return the k most frequent elements.
+
+Approach:
+
+Count the frequency of each number using a dictionary hs.
+
+Use another dictionary frq to map frequency to a list of elements with that frequency.
+
+Loop from highest possible frequency down to 1.
+
+Collect elements in order until k elements are gathered.
+
+Why it works:
+This approach groups elements by frequency and then picks from highest to lowest — efficiently bypasses the need for sorting the entire array.
+
