@@ -1,0 +1,90 @@
+DAY 03
+Valid Palindrome
+class Solution {
+    public boolean isPalindrome(String s) {
+        if (s.isEmpty()) {
+        	return true;
+        }
+        int start = 0;
+        int last = s.length() - 1;
+        while(start <= last) {
+        	char currFirst = s.charAt(start);
+        	char currLast = s.charAt(last);
+        	if (!Character.isLetterOrDigit(currFirst )) {
+        		start++;
+        	} else if(!Character.isLetterOrDigit(currLast)) {
+        		last--;
+        	} else {
+        		if (Character.toLowerCase(currFirst) != Character.toLowerCase(currLast)) {
+        			return false;
+        		}
+        		start++;
+        		last--;
+        	}
+        }
+        return true;
+    }
+}
+
+2.Invert Binary Tree
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        
+        invertTree(root.left);
+        invertTree(root.right);
+        
+        return root;        
+    }
+}
+
+3.Top K Frequent Elements
+
+
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        hs = {}
+        frq = {}
+        for i in xrange(0, len(nums)):
+            if nums[i] not in hs:
+                hs[nums[i]] = 1
+            else:
+                hs[nums[i]] += 1
+
+        for z,v in hs.iteritems():
+            if v not in frq:
+                frq[v] = [z]
+            else:
+                frq[v].append(z)
+        
+        arr = []
+        
+        for x in xrange(len(nums), 0, -1):
+            if x in frq:
+                
+                for i in frq[x]:
+                    arr.append(i)
+
+        return [arr[x] for x in xrange(0, k)]
