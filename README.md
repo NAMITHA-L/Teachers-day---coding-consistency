@@ -153,3 +153,53 @@ Collect elements in order until k elements are gathered.
 Why it works:
 This approach groups elements by frequency and then picks from highest to lowest — efficiently bypasses the need for sorting the entire array.
 
+### DAY 04
+1. Min Stack
+Problem:
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+Approach:
+
+Instead of storing only values, store a pair: (value, current_min).
+
+push(x): push (x, min(x, current_min)).
+
+pop(): remove top element.
+
+top(): return the top value.
+
+getMin(): return the second item of the top pair.
+
+Why it works:
+By storing the minimum value along with every element, you can access the min in O(1) time — no need to traverse.
+
+2. Best Time to Buy and Sell Stock
+Problem:
+Find the maximum profit from a list of stock prices — buy once and sell once.
+
+Approach:
+
+Use two pointers: left (buy) and right (sell).
+
+If selling price is greater, calculate profit and update max_profit.
+
+If not, move the left pointer to the right (start new buy).
+
+Repeat until the end.
+
+Why it works:
+You check the lowest buying point and highest selling point in one pass, with O(n) time.
+
+3. Two Sum
+Problem:
+Find two indices in the array whose elements add up to the target.
+
+Approach:
+
+Use a nested loop to try all combinations of two elements.
+
+If any pair adds up to the target, return their indices.
+
+Why it works:
+Brute-force approach, simple to understand for beginners. Though it has O(n²) time, it’s clear and easy to debug.
+
