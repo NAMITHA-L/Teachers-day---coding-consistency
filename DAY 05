@@ -1,0 +1,83 @@
+DAY 05
+1. Roman to Integer
+Code:
+
+class Solution:
+    def romanToInt(self, s):
+        m = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        
+        ans = 0
+        
+        for i in range(len(s)):
+            if i < len(s) - 1 and m[s[i]] < m[s[i+1]]:
+                ans -= m[s[i]]
+            else:
+                ans += m[s[i]]
+        
+        return ans
+Explanation:
+
+Roman numerals follow subtraction rules when a smaller numeral appears before a larger one (e.g., IV = 4).
+
+We iterate through the string:
+
+If a smaller numeral precedes a larger one, subtract it.
+
+Otherwise, add the value.
+
+This allows proper handling of both additive and subtractive cases in a single pass.
+
+2. Merge Intervals
+Code:
+
+
+class Solution(object):
+    def merge(self, intervals):
+        out = []
+        for i in sorted(intervals, key=lambda i: i[0]):
+            if out and i[0] <= out[-1][1]:
+                out[-1][1] = max(out[-1][1], i[1])
+            else:
+                out += [i]
+        return out
+Explanation:
+
+First, sort all intervals by their starting point.
+
+Iterate through them:
+
+If the current interval overlaps with the last one in out, merge them.
+
+If not, append the current interval as is.
+
+This is efficient and ensures all overlapping intervals are combined into one.
+
+3. Maximum Depth of Binary Tree
+Code:
+
+
+class Solution:
+    def maxDepth(self, root):
+        def dfs(root, depth):
+            if not root: return depth
+            return max(dfs(root.left, depth + 1), dfs(root.right, depth + 1))
+                       
+        return dfs(root, 0)
+Explanation:
+
+We perform a Depth-First Search (DFS), tracking the depth as we go down each branch.
+
+The base case returns the current depth if the node is null.
+
+For each node, we compute the max depth of its left and right children recursively.
+
+The final answer is the maximum depth encountered from root to leaf.
+
