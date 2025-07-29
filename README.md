@@ -203,3 +203,44 @@ If any pair adds up to the target, return their indices.
 Why it works:
 Brute-force approach, simple to understand for beginners. Though it has O(n²) time, it’s clear and easy to debug.
 
+### DAY 05
+1. Roman to Integer
+   
+Explanation:
+
+Roman numerals follow subtraction rules when a smaller numeral appears before a larger one (e.g., IV = 4).
+
+We iterate through the string:
+
+If a smaller numeral precedes a larger one, subtract it.
+
+Otherwise, add the value.
+
+This allows proper handling of both additive and subtractive cases in a single pass.
+
+2. 56. Merge Intervals
+
+Explanation:
+
+First, sort all intervals by their starting point.
+
+Iterate through them:
+
+If the current interval overlaps with the last one in out, merge them.
+
+If not, append the current interval as is.
+
+This is efficient and ensures all overlapping intervals are combined into one.
+
+3. 104. Maximum Depth of Binary Tree
+
+Explanation:
+
+We perform a Depth-First Search (DFS), tracking the depth as we go down each branch.
+
+The base case returns the current depth if the node is null.
+
+For each node, we compute the max depth of its left and right children recursively.
+
+The final answer is the maximum depth encountered from root to leaf.
+
