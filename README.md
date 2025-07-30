@@ -244,7 +244,7 @@ For each node, we compute the max depth of its left and right children recursive
 
 The final answer is the maximum depth encountered from root to leaf.
 
-DAY 05:
+### DAY 06:
 1. Valid Parentheses
    This algorithm checks if a string of brackets is valid by using a stack data structure.
 It works by pushing opening brackets onto the stack, and for each closing bracket, it checks if the top of the stack has a corresponding opening bracket.
