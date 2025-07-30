@@ -244,3 +244,21 @@ For each node, we compute the max depth of its left and right children recursive
 
 The final answer is the maximum depth encountered from root to leaf.
 
+DAY 05:
+1. Valid Parentheses
+   This algorithm checks if a string of brackets is valid by using a stack data structure.
+It works by pushing opening brackets onto the stack, and for each closing bracket, it checks if the top of the stack has a corresponding opening bracket.
+If at any point there's a mismatch or the stack is empty when a closing bracket appears, the string is invalid.
+At the end, the stack should be empty for the string to be considered valid, meaning all opened brackets were properly closed in order.
+2. Maximum Subarray (Kadane's Algorithm)
+   Explanation:
+This solution uses Kadane’s algorithm to find the subarray with the largest sum.
+It iterates through the list and updates each element by adding the previous value if it’s positive, meaning it's beneficial to extend the current subarray.
+This way, nums[i] holds the maximum sum subarray ending at index i.
+Finally, the maximum of all such subarrays is returned, ensuring the global maximum is captured.
+3. Reverse Linked List
+   Explanation:
+This function reverses a singly linked list using an iterative approach.
+It maintains a prev pointer initialized to None and iteratively moves through the list, reversing the direction of each node's next pointer to point to the previous node.
+At the end of the loop, the prev pointer will be at the new head of the reversed list.
+This approach runs in O(n) time with O(1) space, making it efficient and in-place.
