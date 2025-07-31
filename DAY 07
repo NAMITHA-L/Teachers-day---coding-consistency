@@ -1,0 +1,29 @@
+DAY 07 
+ Problem 1: Watermelon  (Codeforces 4A)
+🔹 Code:
+
+w = int(input())
+if w % 2 == 0 and w > 2:
+    print("YES")
+else:
+    print("NO")
+-------------------------------------
+
+Problem 2: Way Too Long Words 🔡 (Codeforces 71A)
+🔹 Code:
+
+def abbreviate_words():
+    n = int(input())
+    words = [input() for _ in range(n)]
+    
+    results = []
+    for s in words:
+        if len(s) > 10:
+            results.append(s[0] + str(len(s) - 2) + s[-1])
+        else:
+            results.append(s)
+    
+    for res in results:
+        print(res)
+
+abbreviate_words()
