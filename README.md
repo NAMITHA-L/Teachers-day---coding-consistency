@@ -262,3 +262,73 @@ This function reverses a singly linked list using an iterative approach.
 It maintains a prev pointer initialized to None and iteratively moves through the list, reversing the direction of each node's next pointer to point to the previous node.
 At the end of the loop, the prev pointer will be at the new head of the reversed list.
 This approach runs in O(n) time with O(1) space, making it efficient and in-place.
+
+### DAY 07
+Problem 1: Watermelon 🍉 (Codeforces 4A)
+## Code:
+
+w = int(input())
+if w % 2 == 0 and w > 2:
+    print("YES")
+else:
+    print("NO")
+    ----
+### Explanation:
+You are given a number w, representing the weight of a watermelon.
+
+You need to determine if you can divide the watermelon into two parts, each with a positive even weight.
+
+For this to be possible:
+
+w must be even → w % 2 == 0
+
+and w > 2 (to avoid splitting into 0 or 1, which are invalid)
+
+✅ Sample:
+Input: 8 → Output: YES (4 + 4)
+
+Input: 2 → Output: NO (can’t split into two positive even parts)
+
+Problem 2: Way Too Long Words 🔡 (Codeforces 71A)
+## Code:
+
+def abbreviate_words():
+    n = int(input())
+    words = [input() for _ in range(n)]
+    
+    results = []
+    for s in words:
+        if len(s) > 10:
+            results.append(s[0] + str(len(s) - 2) + s[-1])
+        else:
+            results.append(s)
+    
+    for res in results:
+        print(res)
+
+abbreviate_words()
+-----
+### Explanation:
+You are given n words.
+
+If a word's length is more than 10, you need to abbreviate it as:
+
+First character + Number of characters in between + Last character
+
+Example: "localization" → "l10n"
+
+If a word is 10 characters or less, print it as-is.
+
+✅ Sample:
+Input:
+4
+word
+localization
+internationalization
+cat
+
+Output:
+word
+l10n
+i18n
+cat
