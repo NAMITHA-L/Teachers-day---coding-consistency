@@ -1,0 +1,27 @@
+### DAY 09
+1. Petya and Strings
+ def compare_strings(s1, s2):
+    s1 = s1.lower()
+    s2 = s2.lower()
+    if s1 < s2:
+        return -1
+    elif s1 > s2:
+        return 1
+    else:
+        return 0
+
+str1 = input().strip()
+str2 = input().strip()
+print(compare_strings(str1, str2))
+
+2. Team
+def count_implemented_problems(n, opinions):
+    count = 0
+    for opinion in opinions:
+        if sum(opinion) >= 2:
+            count += 1
+    return count
+
+n = int(input())
+opinions = [list(map(int, input().split())) for _ in range(n)]
+print(count_implemented_problems(n, opinions))
