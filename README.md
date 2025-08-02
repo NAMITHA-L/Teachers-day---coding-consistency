@@ -332,3 +332,16 @@ word
 l10n
 i18n
 cat
+
+### DAY 09
+1. Petya and Strings
+✅ Explanation:
+Compare two strings lexicographically, ignoring case.
+If the first string is smaller → output -1
+If it's greater → output 1
+If both are equal → output 0
+2. Team
+✅ Explanation:
+Three friends will solve a problem only if at least 2 of them are confident.
+Each line has 3 integers (0 or 1), indicating each friend's confidence.
+Count how many problems satisfy this condition.
