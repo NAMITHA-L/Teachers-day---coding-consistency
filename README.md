@@ -343,5 +343,30 @@ If both are equal → output 0
 2. Team
 ✅ Explanation:
 Three friends will solve a problem only if at least 2 of them are confident.
+
+### DAY 10
+🧩 1. Helpful Maths
+✅ Explanation:
+You're given a string of digits separated by + signs (e.g., "3+2+1"). The goal is to sort the digits in increasing order and return the result in the same format.
+The solution:
+
+Extracts only the digits by filtering out +.
+
+Sorts the digits.
+
+Joins them back with '+' between each digit.
+This gives a clean and ordered expression like "1+2+3".
+
+🧩 2. Nearly Lucky Number
+✅ Explanation:
+A number is called nearly lucky if it contains exactly 4 or 7 digits that are either 4 or 7.
+The approach:
+
+Convert the number to a string to loop through its digits.
+
+Count how many times '4' or '7' appears.
+
+If the count is exactly 4 or 7, print "YES"; otherwise, print "NO".
+This checks whether the number is "nearly" composed of lucky digits.
 Each line has 3 integers (0 or 1), indicating each friend's confidence.
 Count how many problems satisfy this condition.
