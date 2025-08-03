@@ -7,7 +7,6 @@
 Every line of code takes me one step closer to the dream.
 
 ### DAY 1
-YOUTUBE LINK : https://youtu.be/Uwggx3YVTo0
 
 ✅ Problem 1: Two Sum (Find indices of two numbers that add up to target):
 
