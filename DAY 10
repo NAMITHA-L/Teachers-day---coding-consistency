@@ -1,0 +1,67 @@
+🧩 1. Helpful Maths
+✅ Code:
+python
+Copy
+Edit
+s = input()
+
+def chk(s):
+    digits = sorted([ch for ch in s if ch != '+'])
+    return '+'.join(digits)
+
+print(chk(s))
+✅ Explanation:
+You are given a string of digits separated by + signs like "3+2+1".
+
+The task is to sort the digits in non-decreasing order while keeping + signs between them.
+
+The code:
+
+Filters out all digits.
+
+Sorts the digits.
+
+Rejoins them using '+'.
+
+Example:
+
+Input: 3+2+1
+
+Output: 1+2+3
+
+🧩 2. Nearly Lucky Number
+✅ Code:
+python
+Copy
+Edit
+n = input()
+
+c = 0
+for digit in n:
+    if digit == '4' or digit == '7':
+        c += 1
+
+if c == 4 or c == 7:
+    print("YES")
+else:
+    print("NO")
+✅ Explanation:
+A number is "nearly lucky" if the count of digits that are either 4 or 7 is exactly 4 or 7.
+
+Your approach:
+
+Convert the number to string so you can loop over digits.
+
+Count how many digits are 4 or 7.
+
+If that count is 4 or 7 → print "YES", else "NO".
+
+Example:
+
+Input: 447774
+
+Count of lucky digits: 5 → Output: NO
+
+Input: 4747474
+
+Count of lucky digits: 7 → Output: YES
