@@ -369,3 +369,15 @@ If the count is exactly 4 or 7, print "YES"; otherwise, print "NO".
 This checks whether the number is "nearly" composed of lucky digits.
 Each line has 3 integers (0 or 1), indicating each friend's confidence.
 Count how many problems satisfy this condition.
+### DAY 12
+🧮 339A - Helpful Maths
+Description:
+Given a string of single-digit numbers separated by plus signs (+), rearrange the digits in non-decreasing order and rejoin them with plus signs. This is a basic string manipulation and sorting task.
+
+👦👧 236A - Boy or Girl
+Description:
+Based on the number of unique characters in a given username, determine whether to "CHAT WITH HER!" (if even) or "IGNORE HIM!" (if odd). A simple problem involving counting distinct characters using a set.
+
+💎 266A - Stones on the Table
+Description:
+From a sequence of colored stones (represented as characters), count how many adjacent stones have the same color and must be removed. The goal is to minimize duplicates in a row — solved with a linear scan.
