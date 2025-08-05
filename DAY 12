@@ -1,0 +1,81 @@
+✅ 339A - Helpful Maths 🧮
+Problem:
+You're given a string of digits separated by + signs (like "3+2+1"). You need to reorder the digits in non-decreasing order.
+
+Approach:
+
+Split the string by '+'.
+
+Sort the resulting numbers.
+
+Join them back with '+'.
+
+Why it works:
+We use string methods to split, sort, and re-join — all efficient operations. Sorting gives the required order.
+
+Code:
+
+
+def helpful_maths(s):
+    numbers = sorted(s.split('+'))
+    return '+'.join(numbers)
+
+# Example usage
+input_str = "3+2+1"
+print(helpful_maths(input_str))  # Output: "1+2+3"
+✅ 236A - Boy or Girl 👦👧
+Problem:
+Given a username, count how many distinct characters are there.
+If the count is even → "CHAT WITH HER!"
+If odd → "IGNORE HIM!"
+
+Approach:
+
+Use set() to get unique characters.
+
+Check if the size is even or odd.
+
+Why it works:
+set() automatically removes duplicates, making it easy to count distinct characters.
+
+Code:
+
+
+def boy_or_girl(username):
+    unique_chars = set(username)
+    if len(unique_chars) % 2 == 0:
+        return "CHAT WITH HER!"
+    else:
+        return "IGNORE HIM!"
+
+# Example usage
+print(boy_or_girl("wjmzbmr"))  # Output: "CHAT WITH HER!"
+✅ 266A - Stones on the Table 💎
+Problem:
+You're given a string of colors representing stones.
+If two adjacent stones are the same color, you need to remove one.
+Return the total number of such removals.
+
+Approach:
+
+Loop through the string from the second character.
+
+Compare each character with the previous.
+
+Increment count if they are equal.
+
+Why it works:
+This direct comparison gives a linear solution in O(n) time.
+
+Code:
+
+
+def stones_on_table(s):
+    count = 0
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:
+            count += 1
+    return count
+
+# Example usage
+print(stones_on_table("RRGGBB"))  # Output: 3
