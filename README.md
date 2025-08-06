@@ -381,3 +381,28 @@ Based on the number of unique characters in a given username, determine whether 
 💎 266A - Stones on the Table
 Description:
 From a sequence of colored stones (represented as characters), count how many adjacent stones have the same color and must be removed. The goal is to minimize duplicates in a row — solved with a linear scan.
+
+### DAY 13
+
+✅ Headings with Explanation
+⚗️ 200B - Drinks
+📘 Explanation:
+You're given the percentages of orange juice in multiple drinks. To find the final concentration when mixed:
+
+Read all percentages into a list.
+
+Take the average using sum / n.
+This gives the overall orange content in the final drink.
+
+⚽ 96A - Football
+📘 Explanation:
+The goal is to detect whether there are 7 or more consecutive 0s or 1s in a binary string:
+
+Traverse the string.
+
+Count how many times the current character matches the previous one.
+
+If the count hits 7 → return "YES" (dangerous situation).
+
+If the sequence breaks, reset the count.
+This ensures accurate detection of any unsafe formation.
